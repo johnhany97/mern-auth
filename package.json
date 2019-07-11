@@ -6,15 +6,17 @@
   "main": "server/index.js",
   "scripts": {
     "start": "npm run prod",
+    "client": "SKIP_PREFLIGHT_CHECK=true npm start --prefix client",
+    "client-install": "npm install --prefix client",
     "server": "babel-node ./server/index.js",
     "server:prod": "node ./dist/index.js",
-    "dev": "NODE_ENV=development concurrently \"npm run server\" \"npm run client\"",
+    "dev": "NODE_ENV=development npm run server",
+    "dev-concurrent": "NODE_ENV=development concurrently \"npm run watch\" \"npm run client\"",
     "clean": "rimraf dist",
     "build": "babel ./server --out-dir dist && cp ./server/config/config.json ./dist/config/",
     "prod": "NODE_ENV=production npm-run-all clean build server:prod",
-    "watch": "nodemon",
-    "eslint": "eslint server/**/*.js --ignore-pattern \"node_modules/\"",
-    "client-install": "npm install --prefix client"
+    "watch": "nodemon --watch server/",
+    "eslint": "eslint server/**/*.js --ignore-pattern \"node_modules/\""
   },
   "engines": {
     "node": ">=8"
@@ -46,5 +48,8 @@
     "eslint-plugin-node": "^9.1.0",
     "nodemon": "^1.19.1",
     "prettier": "^1.18.2"
+  },
+  "nodemonConfig": {
+    "ignore": ["client"]
   }
 }
