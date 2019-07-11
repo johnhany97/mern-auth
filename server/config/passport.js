@@ -7,7 +7,7 @@ const opts = {
   secretOrKey: process.env.SECRET_OR_KEY,
 };
 
-const authenticate = (passport) => {
+const setup = (passport) => {
   passport.use(
     new JwtStrategy(opts, (jwt_payload, done) => {
       User.findById(jwt_payload)
@@ -25,6 +25,4 @@ const authenticate = (passport) => {
   );
 };
 
-export default {
-  authenticate,
-};
+export default setup;
