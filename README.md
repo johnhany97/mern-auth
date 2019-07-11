@@ -32,3 +32,7 @@ Watch mode (using `nodemon`)
 ```
 npm run watch
 ```
+Using Docker
+```
+docker run -p 5000:5000 johnhany97/mern-auth
+```
