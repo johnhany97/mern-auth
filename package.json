@@ -8,12 +8,13 @@
     "start": "npm run prod",
     "server": "babel-node ./server/index.js",
     "server:prod": "node ./dist/index.js",
-    "dev": "NODE_ENV=development npm-run-all server",
+    "dev": "NODE_ENV=development concurrently \"npm run server\" \"npm run client\"",
     "clean": "rimraf dist",
     "build": "babel ./server --out-dir dist && cp ./server/config/config.json ./dist/config/",
     "prod": "NODE_ENV=production npm-run-all clean build server:prod",
     "watch": "nodemon",
-    "eslint": "eslint server/**/*.js --ignore-pattern \"node_modules/\""
+    "eslint": "eslint server/**/*.js --ignore-pattern \"node_modules/\"",
+    "client-install": "npm install --prefix client"
   },
   "engines": {
     "node": ">=8"
