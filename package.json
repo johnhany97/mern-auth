@@ -1,8 +1,9 @@
 {
   "name": "mern-auth",
   "version": "1.0.0",
+  "author": "John Ayad",
   "description": "",
-  "main": "index.js",
+  "main": "server/index.js",
   "scripts": {
     "start": "npm run prod",
     "server": "babel-node ./server/index.js",
@@ -11,9 +12,12 @@
     "clean": "rimraf dist",
     "build": "babel ./server --out-dir dist && cp ./server/config/config.json ./dist/config/",
     "prod": "NODE_ENV=production npm-run-all clean build server:prod",
-    "watch": "nodemon"
+    "watch": "nodemon",
+    "eslint": "eslint server/**/*.js --ignore-pattern \"node_modules/\""
   },
-  "author": "",
+  "engines": {
+    "node": ">=8"
+  },
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
@@ -36,6 +40,10 @@
     "@babel/core": "^7.5.4",
     "@babel/node": "^7.5.0",
     "@babel/preset-env": "^7.5.4",
-    "nodemon": "^1.19.1"
+    "babel-eslint": "^10.0.2",
+    "eslint": "^6.0.1",
+    "eslint-plugin-node": "^9.1.0",
+    "nodemon": "^1.19.1",
+    "prettier": "^1.18.2"
   }
 }

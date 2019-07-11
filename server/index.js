@@ -3,7 +3,7 @@ import { urlencoded, json } from 'body-parser';
 import cors from 'cors';
 
 import './config/config';
-import ('./db/mongoose');
+import('./db/mongoose');
 
 const app = express();
 
