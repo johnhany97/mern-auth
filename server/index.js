@@ -1,19 +1,19 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const cors = require('cors');
+import express from 'express';
+import { urlencoded, json } from 'body-parser';
+import cors from 'cors';
 
-require('./config/config');
-require('./db/mongoose');
+import './config/config';
+import ('./db/mongoose');
 
 const app = express();
 
 // middleware
 app.use(
-  bodyParser.urlencoded({
+  urlencoded({
     extended: false
   })
 );
-app.use(bodyParser.json());
+app.use(json());
 app.use(
   cors({
     origin: true,

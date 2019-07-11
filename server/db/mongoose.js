@@ -1,4 +1,4 @@
-let mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 mongoose.Promise = global.Promise;
 
@@ -7,6 +7,6 @@ mongoose
   .then(() => console.log('MongoDB successfully connected'))
   .catch((err) => console.log(err));
 
-module.exports = {
+export default{
   mongoose
 };

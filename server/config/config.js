@@ -1,6 +1,6 @@
 const env = process.env.NODE_ENV || 'development';
 
-const config = require('./config.json');
+import config from './config.json';
 
 const envConfig = config[env];
 
