@@ -20,13 +20,15 @@ npm i
 ```
 
 ## Running
-To run the project execute the following command using Node
+Development mode
 ```
-npm run start
+npm run dev
 ```
-To run the `nodemon` server, execute the following command
+Production mode
 ```
-npm run server
+npm run prod
 ```
-
-
+Watch mode (using `nodemon`)
+```
+npm run watch
+```
