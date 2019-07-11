@@ -27,6 +27,6 @@ const validateLoginInput = (data) => {
   };
 };
 
-export default {
-  validateLoginInput
+export {
+  validateLoginInput,
 };

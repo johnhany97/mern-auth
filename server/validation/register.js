@@ -43,6 +43,6 @@ const validateRegisterInput = (data) => {
   };
 };
 
-export default {
+export {
   validateRegisterInput
 };

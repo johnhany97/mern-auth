@@ -3,7 +3,10 @@ import { urlencoded, json } from 'body-parser';
 import cors from 'cors';
 
 import './config/config';
-import('./db/mongoose');
+import './db/mongoose';
+
+// routes
+import usersRoutes from './routes/users';
 
 const app = express();
 
@@ -21,6 +24,9 @@ app.use(
     methods: ['GET', 'POST', 'PATCH', 'DELETE']
   })
 );
+
+// routes
+app.use('/api/users', usersRoutes)
 
 // server
 const port = process.env.PORT || 5000;

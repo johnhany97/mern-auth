@@ -7,10 +7,12 @@ You'll need to add your config file which has the required props for your variou
 ```json
 {
   "development": {
-    "MONGO_URI": "mongo://name:password@some_dev_link_for_dev_db:port"
+    "MONGO_URI": "mongo://name:password@some_dev_link_for_dev_db:port",
+    "SECRET_OR_KEY": "someSecretY'all"
   },
   "prod": {
-    "MONGO_URI": "mongo://name:password@some_dev_link_for_prod_db:port"
+    "MONGO_URI": "mongo://name:password@some_dev_link_for_prod_db:port",
+    "SECRET_OR_KEY": "someProdSecretY'all"
   }
 }
 ```
