@@ -9,6 +9,8 @@ import { Link, withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import classnames from 'classnames';
+import Helmet from 'react-helmet';
+
 import { registerUser } from '../../store/actions/auth';
 
 class Register extends Component {
@@ -60,6 +62,9 @@ class Register extends Component {
     const { errors, name, email, password, password2 } = this.state;
     return (
       <div className="container">
+        <Helmet>
+          <title>Register - MERN Auth</title>
+        </Helmet>
         <div className="row">
           <div className="col s8 offset-s2">
             <Link to="/" className="btn-flat waves-effect">

@@ -8,6 +8,8 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import classnames from 'classnames';
+import Helmet from 'react-helmet';
+
 import { loginUser } from '../../store/actions/auth';
 
 class Login extends Component {
@@ -56,6 +58,9 @@ class Login extends Component {
     const { errors, email, password } = this.state;
     return (
       <div className="container">
+        <Helmet>
+          <title>Login - MERN Auth</title>
+        </Helmet>
         <div style={{ marginTop: '4rem' }} className="row">
           <div className="col s8 offset-s2">
             <Link to="/" className="btn-flat waves-effect">

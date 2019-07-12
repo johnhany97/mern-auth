@@ -2,6 +2,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import Helmet from 'react-helmet';
+
 import { logoutUser } from '../../store/actions/auth';
 
 class Dashboard extends Component {
@@ -16,6 +18,9 @@ class Dashboard extends Component {
     const { user } = this.props.auth;
     return (
       <div style={{ height: '75vh' }} className="container valign-wrapper">
+        <Helmet>
+          <title>Dashboard - MERN Auth</title>
+        </Helmet>
         <div className="row">
           <div className="col s12 center-align">
             <h4>

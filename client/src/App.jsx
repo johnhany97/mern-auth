@@ -2,10 +2,14 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import jwtDecode from 'jwt-decode';
 import { Provider } from 'react-redux';
-import setAuthToken from './utils/setAuthToken';
-import { setCurrentUser, logoutUser } from './store/actions/auth';
+import Helmet from 'react-helmet';
 
+// Utils
+import setAuthToken from './utils/setAuthToken';
+
+// Redux
 import store from './store';
+import { setCurrentUser, logoutUser } from './store/actions/auth';
 
 // Components
 import Navbar from './components/Navbar';
@@ -42,6 +46,10 @@ class App extends Component {
       <Provider store={store}>
         <Router>
           <div className="App">
+            <Helmet>
+              <meta charSet="utf-8" />
+              <title>MERN Auth</title>
+            </Helmet>
             <Navbar />
             <Switch>
               <Route exact path="/" component={Home} />
